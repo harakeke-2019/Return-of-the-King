@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 
   function displayStoryName (info) {
     console.log(info)
-    res.render('index', info)
+    res.render('index', {info})
   }
 
   function displayErrors (err) {

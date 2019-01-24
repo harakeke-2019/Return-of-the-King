@@ -9,7 +9,7 @@ module.exports = {
 
 function getStoryNames (db = connection) {
   return db('storyNames')
-    .select('storyNames.storyName')
+    .select('storyNames.storyname')
 }
 
 function getUser (id, db = connection) {
