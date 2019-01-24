@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  {{!-- CSS --}}
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: white;
+    }
+
+    .storyName{
+      top: 0;
+      width: 100%;
+      background-color: white;
+      padding: 20px;
+      border: 1px solid black;
+      text-align: center;
+      font-size: 36px;
+      position: fixed;
+      overflow: hidden;
+      z-index: 2;
+    }
+
+    .wrapper {
+      position: relative;
+      top: 90px;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-row: 1fr;
+      padding: 20px;
+      grid-gap: 1em;
+      text-align: center;
+      justify-items: center;
+      z-index: 0;
+    }
+    .instructions {
+      font-size: 16px;
+      width: 70vw;
+    }
+
+    .getStarted {
+      font-size: 24px;
+
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    a:hover{
+      color: red;
+    }
+
+    .form {
+      line-height: 80px;
+    }
+
+    .sentence {
+      width: 70vw;
+    }
+
+    .submit {
+      background-color: pink;
+      border: none;
+      color: black;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+
+    .lastSentence {
+      font-size: 24px;
+    }
+
+    .fullStory {
+      border: 1px solid black;
+      padding: 20px;
+      width: 70vw;
+      height: 80vh;
+    }
+  </style>
+
+{{!-- Body --}}
+  <div class="storyName">The Never Ending Story</div>
+  <div class="wrapper">
+    {{{body}}}
+  </div>
+</body>
+</html>
