@@ -45,14 +45,14 @@ router.get('/form/:id', (req, res) => {
 
 // post new sentence and load story page
 router.post('/form/submit', (req, res) => {
-  const sentence = req.body.sentence
-  console.log(req.params.id)
+  //const sentence = req.body.sentence
+  console.log(req.body.sentence)
   db.addNewSentence()
     .then(postStory)
     .catch(displayErrors)
 
   function postStory (story) {
-    // console.log(story)
+    console.log(story)
     res.render('')
   }
 
