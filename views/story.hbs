@@ -1,7 +1,50 @@
-<div class="fullStory">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+
+
+<style>
+    .storyName{
+    position: absolute;
+    text-align: center;
+    width: 433px;
+    height: 50px;
+    left: 35vw;
+    top: 22px;
+    font-size: 36px;
+    }
+    
+    .fullStory{
+      position: absolute;
+      top: 13vh;
+      left: 35vw;
+      width: 433px;
+      height: 70vh;
+      padding: 10px;
+      overflow: scroll;
+    }
+    
+    
+    </style>
+    
+    <div class="storyName">
+        The Never Ending Story...
+      </div>
+    
+ <div class="fullStory">
  
   {{#each data}}
     {{sentence}}
   {{/each}}
    <p>{{sentence}}</p>
 </div>
+
+</body>
+</html>
