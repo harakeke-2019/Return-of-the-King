@@ -5,7 +5,8 @@ const connection = require('knex')(config)
 module.exports = {
   getStoryNames,
   updateStory,
-  addNewSentence
+  addNewSentence,
+  displayStory
 }
 
 function getStoryNames (db = connection) {
@@ -23,4 +24,10 @@ function updateStory (id, db = connection) {
 function addNewSentence (sentence, db = connection) {
   return db('stories')
     .insert({'sentence': sentence})
+}
+
+function displayStory(story, db = connection) {
+  return db('stories')
+    .select()
+    .where
 }

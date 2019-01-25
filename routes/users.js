@@ -45,20 +45,22 @@ router.get('/form/:id', (req, res) => {
 
 // post new sentence and load story page
 router.post('/form/submit', (req, res) => {
-  //const sentence = req.body.sentence
-  console.log(req.body.sentence)
-  db.addNewSentence()
+  const sentence = req.body.sentence
+
+  db.addNewSentence(sentence)
     .then(postStory)
     .catch(displayErrors)
 
-  function postStory (story) {
-    console.log(story)
-    res.render('')
+  function postStory () {
+    res.render('story', {sentence})
   }
+
 
   function displayErrors (err) {
     res.status(500).send(err.message)
   }
 })
+
+
 
 module.exports = router
