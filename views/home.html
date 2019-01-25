@@ -1,7 +1,44 @@
-<div class="instructions">
-  Instructions...
-</div>
+<style>
+  .wrapperHome{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 100vh;
+      text-align: center;
+      justify-items: center;
+      align-items: center;
+      font-size: 36px;
+      border: 1px solid black;
+    }
 
-<div class="getStarted">
-  <a href="/form">Get Started</a>
+    .storyName{
+      grid-column-start: 1;
+      grid-column-end: 1;
+      justify-self: end;
+    }
+
+    .startStory{
+      grid-column-start: 2;
+      grid-column-end: 2;
+      justify-self: start;
+      padding-left: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 36px;
+      color: black;
+    }
+
+    a:hover{
+      text-decoration: underline;
+    }
+</style>
+
+<div class="wrapperHome">
+  <div class="storyName">
+    The Never Ending Story... 
+  </div>
+  <div class="startStory">
+    <a href="/form">Start story</a>
+  </div>
 </div>
