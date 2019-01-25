@@ -49,6 +49,7 @@ router.post('/form', (req, res) => {
 router.get('/story', (req, res) => {
   db.loadStory()
     .then(formatData)
+    .then(removeCommas)
     .then(showStory)
     .catch(displayErrors)
 
@@ -60,9 +61,14 @@ router.get('/story', (req, res) => {
     return info
   }
 
-  function showStory (info) {
-    console.log('story', info)
-    res.render('story', info)
+  function removeCommas (info) {
+    const noCommas = info.replaceAll(',', '')
+    return noCommas
+  }
+
+  function showStory (story) {
+    console.log('story', story)
+    res.render('story', story)
   }
 
   // have the array, map over each object in array
