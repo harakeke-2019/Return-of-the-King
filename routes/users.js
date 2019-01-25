@@ -48,12 +48,21 @@ router.post('/form', (req, res) => {
 // Show story
 router.get('/story', (req, res) => {
   db.loadStory()
+    .then(formatData)
     .then(showStory)
     .catch(displayErrors)
 
-  function showStory (story) {
-    console.log('story', story)
-    res.render('story', story)
+  function formatData (data) {
+    console.log(data)
+    const info = {
+      sentence: data.map(i => i.sentence)
+    }
+    return info
+  }
+
+  function showStory (info) {
+    console.log('story', info)
+    res.render('story', info)
   }
 
   // have the array, map over each object in array
