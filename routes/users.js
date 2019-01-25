@@ -39,7 +39,7 @@ router.post('/form/submit', (req, res) => {
     .catch(displayErrors)
 
   function postStory (story) {
-    console.log(story)
+    console.log('story:' + story)
     res.render('story', story)
   }
 
