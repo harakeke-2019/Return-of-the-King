@@ -20,5 +20,5 @@ function addNewSentence (sentence, db = connection) {
 
 function loadStory (db = connection) {
   return db('story')
-    .select('story.sentence')
+    .select('sentence')
 }

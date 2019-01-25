@@ -15,7 +15,6 @@ router.get('/form', (req, res) => {
 
   function formatData (data) {
     const info = {
-      name: data[0].name,
       sentence: data[0].sentence
     }
     return info
@@ -30,18 +29,34 @@ router.get('/form', (req, res) => {
   }
 })
 
-// post new sentence and load story page
-router.post('/form/submit', (req, res) => {
+// post new sentence to db
+router.post('/form', (req, res) => {
   const sentence = req.body.sentence
   db.addNewSentence(sentence)
-    .then(db.loadStory)
     .then(postStory)
     .catch(displayErrors)
 
-  function postStory (story) {
-    console.log('story:' + story)
+  function postStory () {
+    res.redirect('/story')
+  }
+
+  function displayErrors (err) {
+    res.status(500).send(err.message)
+  }
+})
+
+// Show story
+router.get('/story', (req, res) => {
+  db.loadStory()
+    .then(showStory)
+    .catch(displayErrors)
+
+  function showStory (story) {
+    console.log('story', story)
     res.render('story', story)
   }
+
+  // have the array, map over each object in array
 
   function displayErrors (err) {
     res.status(500).send(err.message)
