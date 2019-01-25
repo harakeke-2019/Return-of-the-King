@@ -50,6 +50,15 @@ router.post('/form/submit', (req, res) => {
   const sentence = req.body.sentence
 
   db.addNewSentence(sentence)
+  .then(redirectToStory)
+
+  function redirectToStory(){
+  res.redirect('/wholestory')
+  }
+})
+
+
+router.get('/wholestory',(req,res)=>{
   db.getStory()
   .then(postStory)
   .catch(displayErrors)
@@ -57,7 +66,6 @@ router.post('/form/submit', (req, res) => {
   function postStory (data) {
     res.render('story', {data})
   }
-
 
   function displayErrors (err) {
     res.status(500).send(err.message)
