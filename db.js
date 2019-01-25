@@ -3,9 +3,11 @@ const config = require('./knexfile')[environment]
 const connection = require('knex')(config)
 
 module.exports = {
-  getLastSentence,
+  getStoryNames,
+  updateStory,
   addNewSentence,
-  loadStory
+  displaySentence,
+  getStory
 }
 
 function getLastSentence (db = connection) {
@@ -18,7 +20,19 @@ function addNewSentence (sentence, db = connection) {
     .insert([{sentence: sentence}])
 }
 
-function loadStory (db = connection) {
-  return db('story')
-    .select('story.sentence')
+function addNewSentence (sentence, db = connection) {
+  return db('stories')
+    .select()
+    .insert({'sentence': sentence})
+}
+
+function displaySentence(db = connection) {
+  return db('stories')
+    .select()
+
+}
+
+function getStory(db =connection){
+  return db('stories')
+    .select('sentence')
 }
