@@ -4,22 +4,15 @@
 <div class="lastSentence">
   {{this.sentence}}
 </div>
-    
-<form class ="form" action="/form/submit" method="POST">
-  <div>
-      <input class="sentence" type="text" name="sentence">
-    </div>
-  
-  <div class="storyLine">
-    <div class="lastSentence">
-      {{table.sentence}}
-    </div>
-  
-    <form class ="form" action="/form" method="POST">
+    <form class ="form" action="/form/submit" method="POST">
       <div>
         <input class="sentence" type="text" name="sentence">  <input class="submit" type="submit" value="Submit">
       </div>
+      <div class="lastSentence">
+      {{table.sentence}}
+    </div>
     </form>
+    
   </div>
   
     <div class="instructions">

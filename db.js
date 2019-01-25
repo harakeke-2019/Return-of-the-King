@@ -6,7 +6,8 @@ module.exports = {
   getStoryNames,
   updateStory,
   addNewSentence,
-  displayStory
+  displaySentence,
+  getStory
 }
 
 function getStoryNames (db = connection) {
@@ -23,11 +24,17 @@ function updateStory (id, db = connection) {
 
 function addNewSentence (sentence, db = connection) {
   return db('stories')
+    .select()
     .insert({'sentence': sentence})
 }
 
-function displayStory(story, db = connection) {
+function displaySentence(db = connection) {
   return db('stories')
     .select()
-    .where
+
+}
+
+function getStory(db =connection){
+  return db('stories')
+    .select('sentence')
 }
