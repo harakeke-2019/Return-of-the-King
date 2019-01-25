@@ -1,22 +1,95 @@
-<div class= 'title'>
-  {{this.name}}
-</div>
-<div class="lastSentence">
+<style>
+.wrapperForm{
+position: relative;
+width: 100vw;
+height: 100vh;
+background: #FFFFFF;
+}
+.storyName{
+position: absolute;
+text-align: center;
+width: 433px;
+height: 50px;
+left: 35vw;
+top: 22px;
+font-size: 36px;
+}
+.storyLine{
+  position: absolute;
+  top: 35vh;
+  left: 35vw;
+}
+.lastSentence {
+height: 33px;
+left: 325px;
+top: 247px;
+font-family: 'Noto Serif', serif;
+font-size: 24px;
+}
+.sentence {
+width: 522px;
+height: 41px;
+left: 325px;
+top: 309px;
+font-size: 24px;
+font-family: 'Noto Serif', serif;
+background: none;
+border: 1px solid #000000;
+}
+.submit {
+width: 121px;
+height: 33px;
+left: 867px;
+top: 317px;
+border: none;
+font-family: 'Noto Serif', serif;
+background: none;
+font-size: 24px;
+text-decoration: none;
+text-decoration-line: underline;
+cursor: pointer;
+}
+.submit:hover{
+  color: red;
+}
+.instructions{
+position: absolute;
+width: 305px;
+height: 357px;
+left: 20px;
+top: 50vh;
+font-family: 'Noto Serif', serif;
+font-size: 18px;
+color:#d8d8d8;
+-moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+.instructions:hover{
+  color: #000000
+}
+</style>
+
+
+<div class="wrapperForm">
+    <div class="storyName">
+      The Never Ending Story...
+    </div>
+  
+  <div class="storyLine">
+ <div class="lastSentence">
   {{this.sentence}}
 </div>
+  
     <form class ="form" action="/form/submit" method="POST">
       <div>
         <input class="sentence" type="text" name="sentence">  <input class="submit" type="submit" value="Submit">
       </div>
-      <div class="lastSentence">
-      {{table.sentence}}
-    </div>
     </form>
-    
   </div>
   
     <div class="instructions">
       <span style="text-decoration-line: underline;">Instructions</span><br>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam ea dolorem nostrum illo culpa minima necessitatibus, eveniet, harum quis error molestiae laudantium sunt autem, laboriosam ipsa reprehenderit quibusdam.
     </div>
-  </div>
+</div>
